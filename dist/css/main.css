@@ -6,6 +6,10 @@
   font-family: "Barlow Semi Condensed";
 }
 
+body {
+  position: relative;
+}
+
 .hide {
   display: none !important;
 }
@@ -37,4 +41,100 @@
 .rules-close-button:hover {
   background: hsla(217, 16%, 45%, 0.158);
   border: 1px solid hsl(217, 16%, 45%);
+}
+
+.gamePage {
+  border: 2px solid magenta;
+  height: 100vh;
+  background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.gamePage .logo-and-score-count {
+  border: 2px solid rgba(255, 255, 255, 0.587);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.gamePage .logo-and-score-count .logo {
+  width: 108px;
+  height: 66px;
+}
+.gamePage .score-count {
+  /*border: 2px solid magenta;*/
+  height: 100px;
+  width: 130px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.7rem;
+}
+.gamePage .score-count .score-text {
+  font-weight: bold;
+  color: hsl(229, 64%, 46%);
+}
+.gamePage .score-count .score-designs {
+  font-weight: bold;
+  color: hsl(349, 70%, 56%);
+}
+.gamePage .page-one {
+  border: 2px solid magenta;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: 3rem;
+  align-items: center;
+  flex: 1;
+}
+.gamePage .page-one .rules-btn {
+  padding-inline: 1.5rem;
+  padding-block: 1rem;
+  font-weight: bold;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.587);
+  color: white;
+  border-radius: 5px;
+}
+.gamePage .page-one .btn-styles {
+  border: 15px solid;
+  background: white;
+  padding: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+}
+.gamePage .page-one .paper-btn {
+  padding-block: 0.9rem;
+  border-color: hsl(230, 89%, 62%);
+  left: 8px;
+  top: 190px;
+}
+.gamePage .page-one .rock-btn {
+  border-color: hsl(349, 71%, 52%);
+  right: 120px;
+  top: 400px;
+}
+.gamePage .page-one .scissors-btn {
+  padding-block: 1rem;
+  border-color: hsl(39, 89%, 49%);
+  right: 20px;
+  top: 190px;
+}
+
+.paper-btn:hover {
+  border-color: hsl(230, 89%, 65%);
+}
+
+.scissors-btn:hover {
+  border-color: hsl(40, 84%, 53%);
+}
+
+.rock-btn:hover {
+  border-color: hsl(349, 70%, 56%);
 }/*# sourceMappingURL=main.css.map */
