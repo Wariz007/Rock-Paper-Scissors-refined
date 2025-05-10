@@ -1,0 +1,100 @@
+.gamePage {
+    border: 2px solid magenta;
+    height: 100vh;
+    background: $background-gradient;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .logo-and-score-count {
+        border: 2px solid rgba(255, 255, 255, 0.587);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        
+        .logo {
+            width: 108px;
+            height: 66px;
+        }
+    }
+    .score-count {
+        /*border: 2px solid magenta;*/
+        height: 100px;
+        width: 130px;
+        background: white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 0.7rem;
+
+        .score-text {
+            font-weight: bold;
+            color: $Score-Text;
+        }
+        .score-designs {
+            font-weight: bold;
+            color: $rock2;
+        }
+    }
+
+    .page-one {
+        border: 2px solid magenta;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-block: 3rem;
+        align-items: center;
+        flex: 1;
+        
+        .rules-btn {
+            padding-inline: 1.5rem;
+            padding-block: 1rem;
+            font-weight: bold;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.587);
+            color: white;
+            border-radius: $borderRadius;
+        }
+
+        .btn-styles {
+            border: 15px solid;
+            background: white;
+            padding: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .paper-btn {
+            padding-block: 0.9rem;
+            border-color: $paper1;
+            left: 8px;
+            top: 190px;
+        }
+        .rock-btn {
+            border-color: $rock1;
+            right: 120px;
+            top: 400px;
+        }
+        .scissors-btn {
+            padding-block: 1rem;
+            border-color: $scissors1;
+            right: 20px;
+            top: 190px;
+        }
+    }
+}
+
+.paper-btn:hover {
+    border-color: $paper2;
+}
+.scissors-btn:hover {
+    border-color: $scissors2;
+}
+.rock-btn:hover {
+    border-color: $rock2;
+}

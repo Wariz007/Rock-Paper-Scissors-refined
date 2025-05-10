@@ -7,7 +7,12 @@
     font-family: 'Barlow Semi Condensed';
 }
 
+body {
+    position: relative;
+}
+
 //variables
+$borderRadius: 5px;
 $Dark_text: hsl(229, 25%, 31%);
 $Score-Text: hsl(229, 64%, 46%);
 $Header-Outline: hsl(217, 16%, 45%);
@@ -17,7 +22,7 @@ $paper1: hsl(230, 89%, 62%);
 $paper2: hsl(230, 89%, 65%);
 $rock1: hsl(349, 71%, 52%);
 $rock2: hsl(349, 70%, 56%);
-$background-gradient: linear-gradient(to-bottom, hsl(214, 47%, 23%) to hsl(237, 49%, 15%));
+$background-gradient: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 
 //dynamic classes
 .hide {
