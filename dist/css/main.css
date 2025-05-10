@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed";
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+.rules-page {
+  /*border: 2px solid magenta;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding-block: 5rem;
+}
+.rules-page .rules-heading {
+  font-size: 2rem;
+  color: hsl(217, 16%, 45%);
+}
+.rules-page .rules-close-button {
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.rules-close-button:hover {
+  background: hsla(217, 16%, 45%, 0.158);
+  border: 1px solid hsl(217, 16%, 45%);
+}/*# sourceMappingURL=main.css.map */
