@@ -30,6 +30,11 @@ const playerPickCircle = document.querySelector('.player-pick-circle');
 const computerPick = document.getElementById('computer-pick') as HTMLImageElement;
 const computerPickCircle = document.querySelector('.computer-pick-circle');
 
+//selection for win or lose indicator
+const winOrLoseIndicator = document.querySelector('.win-or-lose-indicator');
+const winOrLoseText = document.querySelector('.win-or-lose-text') as HTMLElement;
+const nextRoundBtn = document.querySelector('.next-round-btn');
+
 let userPick: string = '';
 
 function navigateToPageTwo(){
@@ -61,7 +66,6 @@ function navigateToPageTwo(){
     //code for random computer pick in page 2
     let choices = ['paper', 'scissors', 'rock'];
     let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log('random pick is:', computerChoice);
 
     switch(computerChoice){
         case 'paper':
@@ -84,6 +88,38 @@ function navigateToPageTwo(){
     //navigate to page two
     pageOne?.classList.add('hide');
     pageTwo?.classList.remove('hide');
+    determineWinner(userPick, computerChoice);
+}
+
+function determineWinner(user: string, computer: string) {
+    //code for if the results is a draw
+    if(user === computer){
+        winOrLoseIndicator?.classList.remove('hide');
+        winOrLoseText.textContent = 'DRAW';
+        return;
+    }
+
+    console.log('determine winner is working');
+
+    //code to determine a win or lose situation
+    if(user === 'paper' && computer === 'rock'){
+        winOrLoseIndicator?.classList.remove('hide');
+        winOrLoseText.textContent = 'YOU WIN';
+        return;
+    } else if (user === 'scissors' && computer === 'paper'){
+        winOrLoseIndicator?.classList.remove('hide');
+        winOrLoseText.textContent = 'YOU WIN';
+        return;
+    } else if (user === 'rock' && computer === 'scissors'){
+        winOrLoseIndicator?.classList.remove('hide');
+        winOrLoseText.textContent = 'YOU WIN';
+        return;
+    } else {
+        winOrLoseIndicator?.classList.remove('hide');
+        winOrLoseText.textContent = 'YOU LOSE';
+        return;
+    }
+
 }
 
 paperBtn?.addEventListener('click', () => {
