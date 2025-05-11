@@ -114,4 +114,49 @@
             }
         }
     }
+
+    .play-area {
+        border: 2px solid magenta;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 1rem;
+
+        p {
+            color: white;
+            font-weight: bold;
+        }
+
+        .player-container {
+            border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            p {
+                margin-top: 1rem;
+            }
+        }
+        .computer-container {
+            border: 2px solid red;
+        }
+    }
+}
+
+.selected-choice {
+    border: 15px solid;
+    background: white;
+    padding-block: 1rem;
+    padding-inline: 1.3rem;
+    border-radius: 50%;
+}
+
+.paper-style {
+    border-color: $paper1;
+}
+.scissors-style {
+    border-color: $scissors1;
+}
+.rock-style {
+    border-color: $rock1;
 }
