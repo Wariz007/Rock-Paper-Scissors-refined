@@ -6,9 +6,6 @@
   font-family: "Barlow Semi Condensed";
 }
 
-/*body {
-    position: relative;
-}*/
 .hide {
   display: none !important;
 }
@@ -169,6 +166,12 @@
 }
 .gamePage .play-area .computer-container {
   border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gamePage .play-area .computer-container p {
+  margin-top: 1rem;
 }
 
 .selected-choice {

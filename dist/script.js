@@ -24,6 +24,8 @@ const scissorsBtn = document.querySelector('.scissors-btn');
 //selection for dynamic pick for page two
 const playerPick = document.getElementById('player-pick');
 const playerPickCircle = document.querySelector('.player-pick-circle');
+const computerPick = document.getElementById('computer-pick');
+const computerPickCircle = document.querySelector('.computer-pick-circle');
 let userPick = '';
 function navigateToPageTwo() {
     //code for player pick in page 2
@@ -47,6 +49,27 @@ function navigateToPageTwo() {
         default:
             console.error('Invalid user pick', userPick);
             return;
+    }
+    //code for random computer pick in page 2
+    let choices = ['paper', 'scissors', 'rock'];
+    let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    console.log('random pick is:', computerChoice);
+    switch (computerChoice) {
+        case 'paper':
+            computerPick.src = 'images/icon-paper.svg';
+            computerPick.alt = 'Paper pick';
+            computerPickCircle === null || computerPickCircle === void 0 ? void 0 : computerPickCircle.classList.add('paper-style');
+            break;
+        case 'scissors':
+            computerPick.src = 'images/icon-scissors.svg';
+            computerPick.alt = 'Scissors pick';
+            computerPickCircle === null || computerPickCircle === void 0 ? void 0 : computerPickCircle.classList.add('scissors-style');
+            break;
+        case 'rock':
+            computerPick.src = 'images/icon-rock.svg';
+            computerPick.alt = 'Rock pick';
+            computerPickCircle === null || computerPickCircle === void 0 ? void 0 : computerPickCircle.classList.add('rock-style');
+            break;
     }
     //navigate to page two
     pageOne === null || pageOne === void 0 ? void 0 : pageOne.classList.add('hide');
