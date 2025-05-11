@@ -1,5 +1,5 @@
 .gamePage {
-    border: 2px solid magenta;
+    /*border: 2px solid magenta;*/
     height: 100vh;
     background: $background-gradient;
     padding: 1rem;
@@ -43,13 +43,20 @@
     }
 
     .page-one {
-        border: 2px solid magenta;
+        /*border: 2px solid magenta;*/
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding-block: 3rem;
         align-items: center;
         flex: 1;
+        margin-inline: auto;
+        width: min(90%, 50rem);
+
+        .player-area {
+            /*border: 2px solid magenta;*/
+            position: relative;
+        }
         
         .rules-btn {
             padding-inline: 1.5rem;
@@ -59,6 +66,12 @@
             border: 2px solid rgba(255, 255, 255, 0.587);
             color: white;
             border-radius: $borderRadius;
+            cursor: pointer;
+
+            &:hover {
+                border-color: white;
+                color: rgba(255, 255, 255, 0.587);
+            }
         }
 
         .btn-styles {
@@ -66,35 +79,39 @@
             background: white;
             padding: 1.3rem;
             border-radius: 50%;
-            position: absolute;
         }
 
         .paper-btn {
             padding-block: 0.9rem;
             border-color: $paper1;
-            left: 8px;
-            top: 190px;
+            right: 200px;
+            top: -15px;
+            position: absolute;
+
+            &:hover {
+                border-color: $paper2;
+            }
         }
         .rock-btn {
             border-color: $rock1;
-            right: 120px;
-            top: 400px;
+            top: 165px;
+            left: 100px;
+            position: absolute;
+
+            &:hover {
+                border-color: $rock2;
+            }
         }
         .scissors-btn {
             padding-block: 1rem;
             border-color: $scissors1;
-            right: 20px;
-            top: 190px;
+            left: 200px;
+            top: -15px;
+            position: absolute;
+
+            &:hover {
+                border-color: $scissors2;
+            }
         }
     }
-}
-
-.paper-btn:hover {
-    border-color: $paper2;
-}
-.scissors-btn:hover {
-    border-color: $scissors2;
-}
-.rock-btn:hover {
-    border-color: $rock2;
 }
