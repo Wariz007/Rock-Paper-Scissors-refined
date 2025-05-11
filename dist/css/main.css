@@ -6,10 +6,9 @@
   font-family: "Barlow Semi Condensed";
 }
 
-body {
-  position: relative;
-}
-
+/*body {
+    position: relative;
+}*/
 .hide {
   display: none !important;
 }
@@ -44,7 +43,7 @@ body {
 }
 
 .gamePage {
-  border: 2px solid magenta;
+  /*border: 2px solid magenta;*/
   height: 100vh;
   background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   padding: 1rem;
@@ -85,13 +84,19 @@ body {
   color: hsl(349, 70%, 56%);
 }
 .gamePage .page-one {
-  border: 2px solid magenta;
+  /*border: 2px solid magenta;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-block: 3rem;
   align-items: center;
   flex: 1;
+  margin-inline: auto;
+  width: min(90%, 50rem);
+}
+.gamePage .page-one .player-area {
+  /*border: 2px solid magenta;*/
+  position: relative;
 }
 .gamePage .page-one .rules-btn {
   padding-inline: 1.5rem;
@@ -101,40 +106,44 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.587);
   color: white;
   border-radius: 5px;
+  cursor: pointer;
+}
+.gamePage .page-one .rules-btn:hover {
+  border-color: white;
+  color: rgba(255, 255, 255, 0.587);
 }
 .gamePage .page-one .btn-styles {
   border: 15px solid;
   background: white;
   padding: 1.3rem;
   border-radius: 50%;
-  position: absolute;
 }
 .gamePage .page-one .paper-btn {
   padding-block: 0.9rem;
   border-color: hsl(230, 89%, 62%);
-  left: 8px;
-  top: 190px;
+  right: 200px;
+  top: -15px;
+  position: absolute;
+}
+.gamePage .page-one .paper-btn:hover {
+  border-color: hsl(230, 89%, 65%);
 }
 .gamePage .page-one .rock-btn {
   border-color: hsl(349, 71%, 52%);
-  right: 120px;
-  top: 400px;
+  top: 165px;
+  left: 100px;
+  position: absolute;
+}
+.gamePage .page-one .rock-btn:hover {
+  border-color: hsl(349, 70%, 56%);
 }
 .gamePage .page-one .scissors-btn {
   padding-block: 1rem;
   border-color: hsl(39, 89%, 49%);
-  right: 20px;
-  top: 190px;
+  left: 200px;
+  top: -15px;
+  position: absolute;
 }
-
-.paper-btn:hover {
-  border-color: hsl(230, 89%, 65%);
-}
-
-.scissors-btn:hover {
+.gamePage .page-one .scissors-btn:hover {
   border-color: hsl(40, 84%, 53%);
-}
-
-.rock-btn:hover {
-  border-color: hsl(349, 70%, 56%);
 }/*# sourceMappingURL=main.css.map */
