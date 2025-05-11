@@ -27,6 +27,8 @@ const scissorsBtn = document.querySelector('.scissors-btn');
 //selection for dynamic pick for page two
 const playerPick = document.getElementById('player-pick') as HTMLImageElement;
 const playerPickCircle = document.querySelector('.player-pick-circle');
+const computerPick = document.getElementById('computer-pick') as HTMLImageElement;
+const computerPickCircle = document.querySelector('.computer-pick-circle');
 
 let userPick: string = '';
 
@@ -54,6 +56,29 @@ function navigateToPageTwo(){
         default:
             console.error('Invalid user pick', userPick);
             return;
+    }
+
+    //code for random computer pick in page 2
+    let choices = ['paper', 'scissors', 'rock'];
+    let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    console.log('random pick is:', computerChoice);
+
+    switch(computerChoice){
+        case 'paper':
+            computerPick.src = 'images/icon-paper.svg';
+            computerPick.alt = 'Paper pick';
+            computerPickCircle?.classList.add('paper-style');
+            break;
+        case 'scissors':
+            computerPick.src = 'images/icon-scissors.svg';
+            computerPick.alt = 'Scissors pick';
+            computerPickCircle?.classList.add('scissors-style');
+            break;
+        case 'rock':
+            computerPick.src = 'images/icon-rock.svg';
+            computerPick.alt = 'Rock pick';
+            computerPickCircle?.classList.add('rock-style');
+            break;
     }
 
     //navigate to page two
