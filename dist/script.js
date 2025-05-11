@@ -26,6 +26,10 @@ const playerPick = document.getElementById('player-pick');
 const playerPickCircle = document.querySelector('.player-pick-circle');
 const computerPick = document.getElementById('computer-pick');
 const computerPickCircle = document.querySelector('.computer-pick-circle');
+//selection for win or lose indicator
+const winOrLoseIndicator = document.querySelector('.win-or-lose-indicator');
+const winOrLoseText = document.querySelector('.win-or-lose-text');
+const nextRoundBtn = document.querySelector('.next-round-btn');
 let userPick = '';
 function navigateToPageTwo() {
     //code for player pick in page 2
@@ -53,7 +57,6 @@ function navigateToPageTwo() {
     //code for random computer pick in page 2
     let choices = ['paper', 'scissors', 'rock'];
     let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log('random pick is:', computerChoice);
     switch (computerChoice) {
         case 'paper':
             computerPick.src = 'images/icon-paper.svg';
@@ -74,6 +77,37 @@ function navigateToPageTwo() {
     //navigate to page two
     pageOne === null || pageOne === void 0 ? void 0 : pageOne.classList.add('hide');
     pageTwo === null || pageTwo === void 0 ? void 0 : pageTwo.classList.remove('hide');
+    determineWinner(userPick, computerChoice);
+}
+function determineWinner(user, computer) {
+    //code for if the results is a draw
+    if (user === computer) {
+        winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
+        winOrLoseText.textContent = 'DRAW';
+        return;
+    }
+    console.log('determine winner is working');
+    //code to determine a win or lose situation
+    if (user === 'paper' && computer === 'rock') {
+        winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
+        winOrLoseText.textContent = 'YOU WIN';
+        return;
+    }
+    else if (user === 'scissors' && computer === 'paper') {
+        winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
+        winOrLoseText.textContent = 'YOU WIN';
+        return;
+    }
+    else if (user === 'rock' && computer === 'scissors') {
+        winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
+        winOrLoseText.textContent = 'YOU WIN';
+        return;
+    }
+    else {
+        winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
+        winOrLoseText.textContent = 'YOU LOSE';
+        return;
+    }
 }
 paperBtn === null || paperBtn === void 0 ? void 0 : paperBtn.addEventListener('click', () => {
     /*navigate to page 2 with paper as the

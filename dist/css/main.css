@@ -144,19 +144,26 @@
 .gamePage .page-one .scissors-btn:hover {
   border-color: hsl(40, 84%, 53%);
 }
+.gamePage .page-two {
+  /*border: 2px solid red;*/
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 .gamePage .play-area {
-  border: 2px solid magenta;
+  /*border: 2px solid magenta;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 1rem;
+  padding-inline: 2rem;
+  margin-top: 2rem;
 }
 .gamePage .play-area p {
   color: white;
   font-weight: bold;
 }
 .gamePage .play-area .player-container {
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,13 +172,38 @@
   margin-top: 1rem;
 }
 .gamePage .play-area .computer-container {
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .gamePage .play-area .computer-container p {
   margin-top: 1rem;
+}
+.gamePage .win-or-lose-indicator {
+  /*border: 2px solid magenta;*/
+  margin-top: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gamePage .win-or-lose-indicator .win-or-lose-text {
+  color: white;
+  font-weight: bold;
+  font-size: 4rem;
+}
+.gamePage .win-or-lose-indicator .next-round-btn {
+  padding-block: 1rem;
+  padding-inline: 3.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.gamePage .win-or-lose-indicator .next-round-btn:hover {
+  background: rgba(255, 255, 255, 0.731);
 }
 
 .selected-choice {
