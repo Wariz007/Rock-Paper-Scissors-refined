@@ -165,8 +165,30 @@ function handleNextRound(){
         playAgainBtn?.classList.remove('hide');
     }
 }
+function resetGame() {
+    // Reset game state
+    currentRound = 1;
+    playerScore = 0;
+    computerScore = 0;
+    
+    // Reset UI elements
+    winOrLoseIndicator?.classList.add('hide');
+    nextRoundBtn.classList.remove('hide');
+    playAgainBtn?.classList.add('hide');
+    winOrLoseText.style.fontSize = ''; // Reset font size
+    
+    // Reset scores display
+    scoreForPlayer.textContent = '0';
+    scoreForComputer.textContent = '0';
+    roundCount.textContent = '1';
+    
+    // Return to page one
+    pageOne?.classList.remove('hide');
+    pageTwo?.classList.add('hide');
+}
 
 nextRoundBtn?.addEventListener('click', handleNextRound);
+playAgainBtn?.addEventListener('click', resetGame);
 
 paperBtn?.addEventListener('click', () => {
     /*navigate to page 2 with paper as the 
