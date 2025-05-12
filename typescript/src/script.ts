@@ -33,9 +33,21 @@ const computerPickCircle = document.querySelector('.computer-pick-circle');
 //selection for win or lose indicator
 const winOrLoseIndicator = document.querySelector('.win-or-lose-indicator');
 const winOrLoseText = document.querySelector('.win-or-lose-text') as HTMLElement;
-const nextRoundBtn = document.querySelector('.next-round-btn');
+const nextRoundBtn = document.querySelector('.next-round-btn') as HTMLElement;
+const playAgainBtn = document.getElementById('play-again-btn');
 
 let userPick: string = '';
+
+//variables
+let currentRound = 1;
+const maxRounds = 5;
+let playerScore = 0;
+let computerScore = 0;
+
+//scores for player and computer and round count
+const scoreForPlayer = document.getElementById('scoreForPlayer') as HTMLElement;
+const scoreForComputer = document.getElementById('scoreForComputer') as HTMLElement;
+const roundCount = document.getElementById('round-count') as HTMLElement;
 
 function navigateToPageTwo(){
 
@@ -90,7 +102,6 @@ function navigateToPageTwo(){
     pageTwo?.classList.remove('hide');
     determineWinner(userPick, computerChoice);
 }
-
 function determineWinner(user: string, computer: string) {
     //code for if the results is a draw
     if(user === computer){
@@ -105,22 +116,57 @@ function determineWinner(user: string, computer: string) {
     if(user === 'paper' && computer === 'rock'){
         winOrLoseIndicator?.classList.remove('hide');
         winOrLoseText.textContent = 'YOU WIN';
+        playerScore++
         return;
     } else if (user === 'scissors' && computer === 'paper'){
         winOrLoseIndicator?.classList.remove('hide');
         winOrLoseText.textContent = 'YOU WIN';
+        playerScore++
         return;
     } else if (user === 'rock' && computer === 'scissors'){
         winOrLoseIndicator?.classList.remove('hide');
         winOrLoseText.textContent = 'YOU WIN';
+        playerScore++
         return;
     } else {
         winOrLoseIndicator?.classList.remove('hide');
         winOrLoseText.textContent = 'YOU LOSE';
+        computerScore++;
         return;
     }
 
 }
+function resetForNextRound(){
+    winOrLoseIndicator?.classList.add('hide');
+    pageOne?.classList.remove('hide');
+    pageTwo?.classList.add('hide');
+}
+function updateScores(){
+    if(currentRound){
+        roundCount.textContent = `${currentRound}`;
+    }
+    if(playerScore){
+        scoreForPlayer.textContent = playerScore.toString();
+    }
+    if(computerScore){
+        scoreForComputer.textContent = computerScore.toString();
+    }
+}
+function handleNextRound(){
+    if(currentRound < maxRounds){
+        resetForNextRound();
+        updateScores();
+        currentRound++;
+    } else {
+        winOrLoseIndicator?.classList.remove('hide');
+        winOrLoseText.textContent = `Game over: ${playerScore} : ${computerScore}`;
+        winOrLoseText.style.fontSize = '20px';
+        nextRoundBtn.classList.add('hide');
+        playAgainBtn?.classList.remove('hide');
+    }
+}
+
+nextRoundBtn?.addEventListener('click', handleNextRound);
 
 paperBtn?.addEventListener('click', () => {
     /*navigate to page 2 with paper as the 
