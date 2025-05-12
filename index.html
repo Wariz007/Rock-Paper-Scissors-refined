@@ -23,8 +23,9 @@
       <img class="logo" src="images/logo.svg" alt="logomark">
       <div class="score-count">
         <p class="score-text">SCORE</p>
-        <P class="score-designs">Player: <span>0</span></P>
-        <p class="score-designs">Computer: <span>0</span></p>
+        <P class="score-designs">Player: <span id="scoreForPlayer">0</span></P>
+        <p class="score-designs">Computer: <span id="scoreForComputer">0</span></p>
+        <p class="score-text">Rounds: <span id="round-count">1</span> of 5</p>
       </div>
     </div>
     <div class="page-one">
@@ -58,6 +59,7 @@
       <div class="win-or-lose-indicator hide">
         <p class="win-or-lose-text">YOU WIN</p>
         <button class="next-round-btn">NEXT ROUND</button>
+        <button class="next-round-btn hide" id="play-again-btn">PLAY AGAIN</button>
       </div>
     </div>
   </div>

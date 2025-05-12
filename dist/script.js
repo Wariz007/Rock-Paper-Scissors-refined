@@ -30,7 +30,17 @@ const computerPickCircle = document.querySelector('.computer-pick-circle');
 const winOrLoseIndicator = document.querySelector('.win-or-lose-indicator');
 const winOrLoseText = document.querySelector('.win-or-lose-text');
 const nextRoundBtn = document.querySelector('.next-round-btn');
+const playAgainBtn = document.getElementById('play-again-btn');
 let userPick = '';
+//variables
+let currentRound = 1;
+const maxRounds = 5;
+let playerScore = 0;
+let computerScore = 0;
+//scores for player and computer and round count
+const scoreForPlayer = document.getElementById('scoreForPlayer');
+const scoreForComputer = document.getElementById('scoreForComputer');
+const roundCount = document.getElementById('round-count');
 function navigateToPageTwo() {
     //code for player pick in page 2
     playerPickCircle === null || playerPickCircle === void 0 ? void 0 : playerPickCircle.classList.remove('paper-style', 'scissors-style', 'rock-style');
@@ -91,24 +101,59 @@ function determineWinner(user, computer) {
     if (user === 'paper' && computer === 'rock') {
         winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
         winOrLoseText.textContent = 'YOU WIN';
+        playerScore++;
         return;
     }
     else if (user === 'scissors' && computer === 'paper') {
         winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
         winOrLoseText.textContent = 'YOU WIN';
+        playerScore++;
         return;
     }
     else if (user === 'rock' && computer === 'scissors') {
         winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
         winOrLoseText.textContent = 'YOU WIN';
+        playerScore++;
         return;
     }
     else {
         winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
         winOrLoseText.textContent = 'YOU LOSE';
+        computerScore++;
         return;
     }
 }
+function resetForNextRound() {
+    winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.add('hide');
+    pageOne === null || pageOne === void 0 ? void 0 : pageOne.classList.remove('hide');
+    pageTwo === null || pageTwo === void 0 ? void 0 : pageTwo.classList.add('hide');
+}
+function updateScores() {
+    if (currentRound) {
+        roundCount.textContent = `${currentRound}`;
+    }
+    if (playerScore) {
+        scoreForPlayer.textContent = playerScore.toString();
+    }
+    if (computerScore) {
+        scoreForComputer.textContent = computerScore.toString();
+    }
+}
+function handleNextRound() {
+    if (currentRound < maxRounds) {
+        resetForNextRound();
+        updateScores();
+        currentRound++;
+    }
+    else {
+        winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.remove('hide');
+        winOrLoseText.textContent = `Game over: ${playerScore} : ${computerScore}`;
+        winOrLoseText.style.fontSize = '20px';
+        nextRoundBtn.classList.add('hide');
+        playAgainBtn === null || playAgainBtn === void 0 ? void 0 : playAgainBtn.classList.remove('hide');
+    }
+}
+nextRoundBtn === null || nextRoundBtn === void 0 ? void 0 : nextRoundBtn.addEventListener('click', handleNextRound);
 paperBtn === null || paperBtn === void 0 ? void 0 : paperBtn.addEventListener('click', () => {
     /*navigate to page 2 with paper as the
     selected choice*/

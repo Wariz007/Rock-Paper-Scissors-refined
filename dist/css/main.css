@@ -62,7 +62,7 @@
 }
 .gamePage .score-count {
   /*border: 2px solid magenta;*/
-  height: 100px;
+  height: 105px;
   width: 130px;
   background: white;
   border-radius: 10px;
@@ -71,6 +71,7 @@
   align-items: center;
   justify-content: space-between;
   padding-block: 0.7rem;
+  gap: 1px;
 }
 .gamePage .score-count .score-text {
   font-weight: bold;
