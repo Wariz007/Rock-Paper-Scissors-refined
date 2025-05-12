@@ -153,7 +153,26 @@ function handleNextRound() {
         playAgainBtn === null || playAgainBtn === void 0 ? void 0 : playAgainBtn.classList.remove('hide');
     }
 }
+function resetGame() {
+    // Reset game state
+    currentRound = 1;
+    playerScore = 0;
+    computerScore = 0;
+    // Reset UI elements
+    winOrLoseIndicator === null || winOrLoseIndicator === void 0 ? void 0 : winOrLoseIndicator.classList.add('hide');
+    nextRoundBtn.classList.remove('hide');
+    playAgainBtn === null || playAgainBtn === void 0 ? void 0 : playAgainBtn.classList.add('hide');
+    winOrLoseText.style.fontSize = ''; // Reset font size
+    // Reset scores display
+    scoreForPlayer.textContent = '0';
+    scoreForComputer.textContent = '0';
+    roundCount.textContent = '1';
+    // Return to page one
+    pageOne === null || pageOne === void 0 ? void 0 : pageOne.classList.remove('hide');
+    pageTwo === null || pageTwo === void 0 ? void 0 : pageTwo.classList.add('hide');
+}
 nextRoundBtn === null || nextRoundBtn === void 0 ? void 0 : nextRoundBtn.addEventListener('click', handleNextRound);
+playAgainBtn === null || playAgainBtn === void 0 ? void 0 : playAgainBtn.addEventListener('click', resetGame);
 paperBtn === null || paperBtn === void 0 ? void 0 : paperBtn.addEventListener('click', () => {
     /*navigate to page 2 with paper as the
     selected choice*/
